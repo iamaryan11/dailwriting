@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <title>THIS here</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">
+            <header>
+                <nav class="navbar" id="nav-bar">
+                    <div class="logo" id="LOgo"><img src="./logos/logof.gif" class="log-gif"></div>
+                    <ul class="undordered1">
+                        <a href="./landing.html" class="anchor a1"><li class="list l1" id="list1">HOME</li></a>
+                       <a href="#section1" class="anchor a2"><li class="list l2" id="list2">MOTIVATION</li></a> 
+                        <a href="./about.html" class="anchor a3"><li class="list l3" id="list3">ABOUT</li></a>
+                       <a href="./contact.html" class="anchor a4"><li class="list l4" id="list4">CONTACT</li></a> 
+                       <a href="#section2" class="anchor a4"><li class="list l4" id="list4"></li></a>
+                    </ul>
+                    <!-- <div class="thm" id="thm-div"></div> -->
+                     <select id="theme-change" class="select-theme">
+                        <!-- <option value="" selected disabled>CHANGE THEME</option> -->
+                        <option value="default" >Select theme</option>
+                        <option value="basic" >Dark Theme</option>
+                        <option value="spm1" >SpiderMan</option>
+                        <option value="mountains" >Mountains</option>
+                        <!-- <option value="" >Default theme</option> -->
+                     </select>
+                     <div id="time-div" class="time">
+                     </div>
+                    
+                </nav>
+            </header>
+        </div>
+        <div class="box box2">
+         <div class="greet" id="greet-user">
+            <p class="hellouser">Hi User</p>
+         </div>
+         <div class="button-sb" id="sb-button">
+            <button class="adduser" id="add-user">Add User</button>
+            <div id="addusercont" class="adus">
+                <form id="addkarouser">
+                <label for="adddduser">Name:</label>
+                <input id="adddduser" type="text" name="user-hai" required>
+                <button type="submit" id="closeadduser" class="closeuser">Close</button>
+                <button type="submit" id="addcurr" class="addcurrentuser">Add Current user</button>
+            </form>
+            </div>
+             <button class="bu button1sb" id="new-goal-button" onclick="addthegoal()">NEW GOAL</button>
+             <div id="newgoalcontainer" class="hidden">
+                <form id="newgoalform">
+                    <label for="title">Title:</label>
+                    <input id="title" type="text" name="title" required>
+                    <label for="date">Date:</label>
+                    <input id="date" type="date" name="date" required>
+                    <p id="date-error-message" style="color: red; display: none;">Please select a valid future date.</p>
+
+                    <labe for="wordlimits">Set limit:</labe>
+                    <input id="wordlimits" type="number" placeholder="Enter word limit here">
+                    <button type="submit">Add new goal</button>
+                    <button type="button" id="closenewgoal">Close</button>
+                </form>
+             </div>
+            <button class="bu button2sb" id="edit-goal" onclick="editGoal()">EDIT GOAL</button>
+            <!-- Edit Goal Button -->
+               <!-- <button class="editGoalButton"id="edit-goal" data-title="Goal Title" onclick="editGoal()">Edit Goal</button> -->
+
+                <div class="edithide" id="editgoalcont">
+                    <form id="editgoal">
+                        <label for="edit">Title:</label>
+                        <input id="edit" type="text" name="edit-gl" placeholder="Enter the Goal Title" required>
+                        <label for="wordlim">New Word Limits:</label>
+                        <input id="wordlim" type="number" name="edit-gl" required>
+                        <p id="editsuccess"></p>
+                        <button type="submit" id="editGoalButton" >Edit</button>
+                        <button type="button" id="closeeditgoal">Close</button>
+
+                    </form>
+                </div>
+              
+   
+
+
+
+
+
+
+
+            <button class="bu button3sb" id="del-goal" onclick="delthegoal()">DELETE GOAL</button>
+            <div class="delhide" id="delgoalcont">
+                <div id="goallist"></div>
+                <form id="deleteGoalform">
+                    <label for="title">Title:</label>
+                    <input id="title-delete" type="text" name="title-del" placeholder="Enter the Goal Tittle" required>
+                    <button type="submit" id="deletekaro">Delete Goal</button>
+                    <button type="button" id="closedeletegoal">Close</button>
+                </form>
+            </div>
+            <button class="bu button4sb" id="history-goal" onclick="show_history_button()">HISTORY</button>
+            <div class="sh-history" id="histgoalcont">
+                <form id="historygoalform">
+                    <label for="title">Title:</label>
+                    <input id="title-delete" type="text" name="title-del" placeholder="Enter the Goal Tittle" required>
+                    <button type="submit" id="showAllButton" >Show History</button>
+                    <!-- <button type="submit">Show All</button> -->
+                    <button type="button" id="closehistory">Close</button>
+                    
+                </form>
+                <div id="historyContainer"></div>
+            </div>
+            <button class="bu button5sb" id="showmygoals" >SHOW All GOALS</button>
+                <!-- <div id="allGoalsContainer" class="sh-goals" >
+                    <h2>All Goals</h2>
+                    <div id="goalsList"></div>
+                  </div> -->
+                  <!-- <div class="allroundshowgoal"> -->
+                    <!-- <div id="allGoalsContainer" class="hidden_showall">
+                    <button id="exitButton" class="exit-btn">Exit</button>
+                    <h2 class="allgoalhead">All Goals</h2>
+                    
+                    <div id="goalsList"></div>
+                  </div></div> -->
+                  <!-- <div id="allGoalsContainer" class="hidden_showall">
+                    <button id="exitButton" class="exit-btn">Exit</button>
+                    <h2 class="allgoalhead">All Goals</h2>
+                    <div id="goalsList"></div>
+                  </div> -->
+                  <div id="allGoalsContainer" class="show_all_hidden">
+                    <div class="modal-content">
+                      <button id="exitButton" class="exit-btn">Exit</button>
+                      <h2>All Goals</h2>
+                      <div id="goalsList"></div>
+                    </div>
+                  </div>
+        </div>
+        </div>
+        <div class="box box3 fullscreen" id="fullScreen">
+            <div class="titlediv" id="div-title">
+                <!-- <label for="enter-title" class="ttl">Title:</label> -->
+                <!-- <input id="enter-title" class="title-ip" type="text" placeholder="Enter Title here"> -->
+                 <p id="enter-title" class="title-ip" >Title name: reflects Here</p>
+                <select id="fontchange" class="changefnt">
+                    <option value="" disabled selected>Choose font family</option>
+                    <option value="Arial">Arial</option>
+                    <option value="cursive">Cursive</option>
+                    <option value="'Times New Roman', Times, serif">Times New roman</option>
+                    <option value="'Verdana', sans-serif">Verdana</option>
+                    <option value="'Georgia', serif">Georgia</option>
+
+
+                </select>
+                <button class="font-bu1 fb" id="font-bold">Bold</button>
+                <button class="font-bu2 fb" id="font-italics">Italics</button>
+                <button class="font-bu3 fb" id="font-reset">Reset</button>
+            </div>
+            <div class="words-range">
+                
+                    <p class="wordss" id="wordslogged">Words written:</p>
+                    <p class="ranges" id="rangeapply">Range:</p>
+                    <!-- <button id="toggleButton">Fullscreen</button> -->
+            </div>
+            <div class="main-div" id="maindivid">
+                <!-- <form id="txtareaform"> -->
+                    
+                <textarea class="themain" id="main-write"placeholder="Write here...." style="color: beige; font-size: larger;">
+                  
+                </textarea>
+            
+                <!-- </form> -->
+                
+            </div>
+            
+        </div>
+        <div class="box box4">
+            <div id="progressContainer">
+                <label for="progressBar" class="progressmsg">Daily Writing Progress:</label>
+                <div id="progressBarWrapper">
+                  <div id="progressBar"></div>
+                </div>
+                <p id="progressText"></p>
+              </div>
+              
+        </div>
+        <div class="box box5 ">
+
+            <div class="my-calendar">  
+                <h1>Calendar</h1>
+                
+                <!-- Deadline Form -->
+                <form id="add-deadline-form">
+                    <h3>Add a Deadline</h3>
+                    <label for="deadline-date" class="dt">Date:</label>
+                    <input type="date" id="deadline-date" required>
+                    <label for="deadline-text" class="deadlinedes">Description:</label>
+                    <input type="text" id="deadline-text" placeholder="Enter deadline description" required>
+                    <button type="submit">Add Deadline</button>
+                </form>
+            
+                <!-- Calendar -->
+                <div id="calendar"></div>
+            </div>
+            
+        </div>
+        
+        <div class="box box6">
+            <section id="section1"></section>
+            <div class="Thoughts-div" id="quotes-div">
+                <h2 class="thought" id="quote-here">“I have a motto on my bedroom wall: ‘Obstacles are what you see when you take your eye off the goal.‘ Giving up is not my style. I just want to do something that's worthwhile.” — Chris Burke</h2>
+            </div>
+        </section>
+        
+        </div>
+
+    
+
+        <div class="box box7">
+            <section id="section2"></section>
+            <footer class="footer">
+            <div>
+              <p>© 2025 Writing Tracker. All rights reserved.</p>
+              <p>Contact us: <a class="contact-mail" href="mailto:aryan11k03@gmail.com" >support@writingtracker.com</a></p>
+            </div>
+            <div class="foot-nav">
+              <a class="nav-foot-anchor"href="./landing.html">Home</a> |
+              <a class="nav-foot-anchor"href="#calendar">Calendar</a> |
+              <a class="nav-foot-anchor" href="#settings">Settings</a> |
+              <a class="nav-foot-anchor"href="#about">About</a>
+            </div>
+            <div>
+              <a class="my-socials" href="https://www.linkedin.com/in/Aryan ." target="_blank">LinkedIn</a>
+              <a class="my-socials"href="https://www.instagram.com/aryaxn_03" target="_blank">Instagram</a>
+            </div>
+            <p class="thought">"Stay consistent and achieve your writing goals!"</p>
+          </footer>
+        </section></div>
+        
+        <!-- <div class="box box8">BOX8</div>
+        <div class="box box9">BOX9</div>
+        <div class="box box10">BOX10</div> -->
+    </div>
+    <script src="./main.js" defer></script>
+</body>
+</html>

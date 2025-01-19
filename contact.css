@@ -1,0 +1,67 @@
+body{
+    margin:0;
+    padding: 0;
+    background-image: url(./themes/landingtheme.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1{
+    color: beige;
+    text-align: center;
+    font-size: 3rem;
+    border-bottom: 4px solid rgba(26, 24, 68, 0.781);
+}
+
+
+.contactmsg{
+    margin-top:5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.contact{
+ color:beige;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ font-size: 1.3rem;
+ text-align:center;
+ width:70rem;
+ line-height: 32px;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url(./themes/landingtheme.avif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    h1 {
+        color: beige;
+        text-align: center;
+        font-size: 2.5rem; /* Smaller font size for mobile */
+        border-bottom: 4px solid rgba(26, 24, 68, 0.781);
+    }
+
+    .contactmsg {
+        margin-top: 3rem; /* Reduce margin for mobile */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact {
+        color: beige;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.1rem; /* Slightly smaller font for mobile */
+        text-align: center;
+        width: 90%; /* Adjust width for smaller screens */
+        line-height: 28px; /* Adjust line height for readability */
+    }
+}
